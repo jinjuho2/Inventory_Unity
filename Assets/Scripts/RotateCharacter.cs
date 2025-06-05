@@ -8,7 +8,6 @@ public class RotateCharacter : MonoBehaviour , IDragHandler , IEndDragHandler
     public GameObject character;
     private float rotateSpeed = 5f;
     private Vector3 rot;
-    [SerializeField]
     private Vector3 origin;
 
     void Start()

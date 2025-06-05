@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class InventoryUI : MonoBehaviour
+{
+    public Transform inventoryPanel;
+    public ItemSlot[] slots;
+    private int hasItemCount = 0;
+
+    public TextMeshProUGUI slotCount;
+
+    private void Start()
+    {
+        slots = inventoryPanel.GetComponentsInChildren<ItemSlot>();
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].index = i;
+        }
+
+            foreach (ItemSlot slot in slots)
+        {
+            if (slot.HasItemData())
+            {
+                hasItemCount++;
+                slot.SetSlot();
+            }
+
+        }
+        slotCount.text = $"Inventory {hasItemCount} / {slots.Length}";
+    }
+
+    public void OnClickEquip()
+    {
+        //int index = slot
+    }
+
+}
