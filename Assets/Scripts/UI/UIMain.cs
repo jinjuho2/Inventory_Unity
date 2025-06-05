@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UI : MonoBehaviour
+public class UIMain : MonoBehaviour
 {
 
     public Button status;
     public Button inventory;
     public GameObject inventoryImage;
+    public GameObject statusImage;
 
     public void OnClickInventory()
     {
@@ -21,6 +22,7 @@ public class UI : MonoBehaviour
     {
         inventory.gameObject.SetActive(false);
         status.gameObject.SetActive(false);
+        statusImage.SetActive(true);
     }
 
     public void OnClickReset()
@@ -28,5 +30,6 @@ public class UI : MonoBehaviour
         status.gameObject.SetActive(true);
         inventory.gameObject.SetActive(true);
         inventoryImage.SetActive(false);
+        statusImage.SetActive(false);
     }
 }

@@ -12,4 +12,8 @@ public class ItemData : ScriptableObject
     public string description;
     public bool isEquipped;
     public Sprite icon;
+    public int attack;
+    public int defense;
+    public int health;
+    public int critical;
 }

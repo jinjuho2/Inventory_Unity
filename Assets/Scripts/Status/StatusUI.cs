@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class StatusUI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("공격력")]
+    public TextMeshProUGUI attackTxt;
 
-    // Update is called once per frame
-    void Update()
+    [Header("방어력")]
+    public TextMeshProUGUI defenseTxt;
+
+    [Header("체력")]
+    public TextMeshProUGUI healthTxt;
+
+    [Header("치명타율")]
+    public TextMeshProUGUI critical;
+
+
+    void Start()
     {
         
     }
