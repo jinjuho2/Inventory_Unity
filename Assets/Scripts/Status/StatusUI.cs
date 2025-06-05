@@ -18,8 +18,11 @@ public class StatusUI : MonoBehaviour
     public TextMeshProUGUI critical;
 
 
-    void Start()
+    public void ShowStats()
     {
-        
+        attackTxt.text = GameManager.Instance.player.Stats.attack.ToString();
+        defenseTxt.text = GameManager.Instance.player.Stats.defense.ToString();
+        healthTxt.text = GameManager.Instance.player.Stats.health.ToString();
+        critical.text = GameManager.Instance.player.Stats.critical.ToString();
     }
 }
