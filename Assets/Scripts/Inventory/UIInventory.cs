@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class InventoryUI : MonoBehaviour
+public class UIInventory : MonoBehaviour
 {
     public Transform inventoryPanel;
     public ItemSlot[] slots;

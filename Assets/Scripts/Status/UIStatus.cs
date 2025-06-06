@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class StatusUI : MonoBehaviour
+public class UIStatus : MonoBehaviour
 {
     [Header("°ø°Ý·Â")]
     public TextMeshProUGUI attackTxt;

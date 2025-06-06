@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button inventory;
     [SerializeField] private Button status;
 
-    private StatusUI statusUI;
+    private UIStatus UIstatus;
 
     private bool isOn = false;
 
@@ -35,7 +35,7 @@ public class UIManager : MonoBehaviour
 
     private void Init()
     {
-        statusUI = UIStatus.GetComponent<StatusUI>();
+        UIstatus = UIStatus.GetComponent<UIStatus>();
     }
 
     private void Update()
@@ -66,7 +66,7 @@ public class UIManager : MonoBehaviour
         inventory.gameObject.SetActive(false);
         status.gameObject.SetActive(false);
         UIStatus.SetActive(true);
-        statusUI.ShowStats();
+        UIstatus.ShowStats();
 
     }
 
