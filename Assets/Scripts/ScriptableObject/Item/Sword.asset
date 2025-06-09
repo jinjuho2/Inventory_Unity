@@ -16,7 +16,7 @@ MonoBehaviour:
   id: 0
   type: 1
   description: "\uADF8\uB0E5 \uAC80\uC785\uB2C8\uB2E4."
-  isEquipped: 1
+  isEquipped: 0
   icon: {fileID: 1872732258777413398, guid: 2463f2bb45e92d649a63e4b7f3c60c24, type: 3}
   attack: 5
   defense: 0

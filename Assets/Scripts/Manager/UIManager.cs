@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,6 +17,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button status;
 
     private UIStatus UIstatus;
+    [SerializeField]
+    private GameObject Press;
 
     private bool isOn = false;
 
@@ -44,12 +47,16 @@ public class UIManager : MonoBehaviour
         {
             isOn = true;
             UIMain.SetActive(isOn);
+            Press.gameObject.SetActive(false);
         }
         else if (Input.GetKeyDown(KeyCode.I) && isOn)
         {
             isOn = false;
             UIMain.SetActive(isOn);
+            Press.gameObject.SetActive(true);
         }
+
+
     }
 
     

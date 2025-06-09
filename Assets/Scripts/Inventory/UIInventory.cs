@@ -12,8 +12,9 @@ public class UIInventory : MonoBehaviour
 
     public TextMeshProUGUI slotCount;
 
-    private void Start()
+    private void Update()
     {
+        hasItemCount = 0;
         slots = inventoryPanel.GetComponentsInChildren<ItemSlot>();
 
         for (int i = 0; i < slots.Length; i++)
@@ -21,7 +22,7 @@ public class UIInventory : MonoBehaviour
             slots[i].index = i;
         }
 
-            foreach (ItemSlot slot in slots)
+        foreach (ItemSlot slot in slots)
         {
             if (slot.HasItemData())
             {
@@ -31,11 +32,6 @@ public class UIInventory : MonoBehaviour
 
         }
         slotCount.text = $"Inventory {hasItemCount} / {slots.Length}";
-    }
-
-    public void OnClickEquip()
-    {
-        //int index = slot
     }
 
 }

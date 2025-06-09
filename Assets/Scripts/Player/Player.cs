@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public PlayerStats Stats {get { return stats; } }
+    public PlayerStats Stats { get { return stats; } }
     private PlayerStats stats;
 
 
@@ -15,9 +15,16 @@ public class Player : MonoBehaviour
         Init();
     }
 
+    private void Update()
+    {
+        
+    }
+
     private void Init()
     {
         stats = GetComponent<PlayerStats>();
         stats.Init("ÁøÁÖÈ£", 1, 1, 1, 1);
     }
+
+
 }

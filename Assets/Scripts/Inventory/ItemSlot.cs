@@ -5,9 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Net.NetworkInformation;
+using TMPro;
 
-public class ItemSlot : MonoBehaviour , IPointerEnterHandler , IPointerExitHandler, IBeginDragHandler, IEndDragHandler, IDragHandler
+public class ItemSlot : MonoBehaviour,
+    IPointerEnterHandler, IPointerExitHandler, IBeginDragHandler,
+    IEndDragHandler, IDragHandler, IPointerClickHandler
 {
+    [SerializeField]
+    private ItemInfo itemInfo;
+
     [SerializeField]
     private Image icon;
     [SerializeField]
@@ -15,6 +21,8 @@ public class ItemSlot : MonoBehaviour , IPointerEnterHandler , IPointerExitHandl
 
     [SerializeField]
     private Image background;
+
+    public TextMeshProUGUI isEquipped;
 
     public int index;
 
@@ -24,7 +32,12 @@ public class ItemSlot : MonoBehaviour , IPointerEnterHandler , IPointerExitHandl
 
     private Vector3 originVec;
 
+    [SerializeField]
+    private EquipSlot equipSlot;
+
     
+
+
 
     public bool HasItemData()
     {
@@ -37,7 +50,7 @@ public class ItemSlot : MonoBehaviour , IPointerEnterHandler , IPointerExitHandl
         itemData = null;
         icon.enabled = false;
         isEquip.enabled = false;
-        
+
     }
 
     public void SetSlot()
@@ -50,37 +63,43 @@ public class ItemSlot : MonoBehaviour , IPointerEnterHandler , IPointerExitHandl
     public void OnPointerEnter(PointerEventData eventData)
     {
         color = background.color;
-        
-        if (background != null)
-        {
-            //background.color = new Color32(207, 255, 0, 255);
-            background.color = Color.magenta;
-        }
-        else
-        {
-            Debug.LogWarning("background 이미지가 연결되지 않았습니다!");
-        }
+
+        itemInfo.SetInfo(this);
+
+        background.color = Color.magenta;
+
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         background.color = color;
+
+        itemInfo.SetInfo(null);
+
+
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        isEquipped.text = itemData.isEquipped ? "해제" : "장착";
+
+        equipSlot.itemSlot = this;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        originVec = icon.transform.localPosition;
+        //originVec = icon.transform.localPosition;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        Vector3 mousePos = Input.mousePosition;
-        icon.transform.localPosition += mousePos;
+        //Vector3 mousePos = Input.mousePosition;
+        //icon.transform.localPosition += mousePos;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        
+
     }
 
 }
