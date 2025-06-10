@@ -14,8 +14,8 @@ public class ItemSlot : MonoBehaviour,
     [Header("UI")]
     [SerializeField]
     private Image background;
-    [SerializeField]
-    private Image icon;
+
+    public Image icon;
     [SerializeField]
     private Image isEquip;
 
